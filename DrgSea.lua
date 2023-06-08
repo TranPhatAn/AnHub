@@ -1,3 +1,38 @@
+--anticheat
+local plr = game.Players.LocalPlayer
+if not getgenv().AntiCheatBypassed then 
+	if game.PlaceId == 10464237910 then 
+		local bypass
+		for k,v in pairs(getgc(true)) do 
+			if pcall(function() return rawget(v,"indexInstance") end) and type(rawget(v,"indexInstance")) == "table" and  (rawget(v,"indexInstance"))[1] == "kick" then
+				v.an = {"kick",function() bypass = true return game.Workspace:WaitForChild("") end}
+			end
+		end
+		repeat wait() until bypass
+	end
+	local old
+	old = hookmetamethod(Enum.HumanoidStateType,"__index",function(...) 
+		local self,key = ...
+		if key == "StrafingNoPhysics" then return end
+		return old(...)
+	end)
+	
+	local old
+	old = hookfunction(game.FindService,function(...) 
+		local a = ...
+		if a == "VirtualUser" and not checkcaller() then return end
+	end)
+	local old
+	old = hookmetamethod(game,"__namecall",function(...) 
+		local self,key = ...
+		if self == game and key == "VirtualUser" then 
+			if not checkcaller() then return end
+		end
+		return old(...)
+	end)
+	print("Bypassed concac anti cheat rui")
+	getgenv().AntiCheatBypassed = true
+end
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("NoName Hub", "DarkTheme")
