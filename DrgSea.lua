@@ -72,6 +72,20 @@ end
 end
 end)
 
+Section:NewToggle("AutoMatic Farm Beli And Exp", " ", function(b)
+AFBAE = b
+end)
+
+spawn(function()
+while wait() do
+if AFBAE then
+pcall(function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-689.139282, 66.4470139, -1430.08606, -0.991717339, 0, 0.128439337, 0, 1, 0, -0.128439337, 0, -0.991717339)
+end)
+end
+end
+end)
+
 
 Section:NewToggle("Auto Raid", " ", function(b)
 AutoRaid = b
