@@ -1,38 +1,3 @@
---anticheat
-local plr = game.Players.LocalPlayer
-if not getgenv().AntiCheatBypassed then 
-	if game.PlaceId == 10464237910 then 
-		local bypass
-		for k,v in pairs(getgc(true)) do 
-			if pcall(function() return rawget(v,"indexInstance") end) and type(rawget(v,"indexInstance")) == "table" and  (rawget(v,"indexInstance"))[1] == "kick" then
-				v.an = {"kick",function() bypass = true return game.Workspace:WaitForChild("") end}
-			end
-		end
-		repeat wait() until bypass
-	end
-	local old
-	old = hookmetamethod(Enum.HumanoidStateType,"__index",function(...) 
-		local self,key = ...
-		if key == "StrafingNoPhysics" then return end
-		return old(...)
-	end)
-	
-	local old
-	old = hookfunction(game.FindService,function(...) 
-		local a = ...
-		if a == "VirtualUser" and not checkcaller() then return end
-	end)
-	local old
-	old = hookmetamethod(game,"__namecall",function(...) 
-		local self,key = ...
-		if self == game and key == "VirtualUser" then 
-			if not checkcaller() then return end
-		end
-		return old(...)
-	end)
-	print("Bypassed concac anti cheat rui")
-	getgenv().AntiCheatBypassed = true
-end
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("NoName Hub", "DarkTheme")
@@ -46,7 +11,7 @@ for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) 
     table.insert(Weaponlist,v.Name)
 end
  
-Section:NewDropdown("Select weapon", " ", Weaponlist, function(currentOption)
+Section:NewDropdown("select weapon", " ", Weaponlist, function(currentOption)
     Weapon = currentOption
 end)
  
@@ -100,7 +65,7 @@ spawn(function()
 while wait() do
 if AutoFarmRaid then
 pcall(function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-70,150,-80)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-75,118,-25)
 end)
 end
 end
@@ -114,12 +79,15 @@ FastAttackDarkSword = b
 end)
 
 spawn(function()
-while wait() do
+while wait(0.5) do
 if FastAttackDarkSword then
 pcall(function()
-while wait() do
-   workspace.Bomayhackdaythinhu.DarkSword.Attack.RemoteEvent:FireServer(1,game:GetService("Players").LocalPlayer)
-end
+local args = {
+    [1] = 1,2,
+    [2] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("Players").LocalPlayer.Character.DarkSword.Attack.RemoteEvent:FireServer(unpack(args))
 end)
 end
 end
@@ -133,12 +101,15 @@ FastAttackFlameSword = b
 end)
 
 spawn(function()
-while wait() do
+while wait(0.5) do
 if FastAttackFlameSword then
 pcall(function()
-while wait() do
-   game:GetService("Players").LocalPlayer.Backpack.FlameSword.Attack.RemoteEvent:FireServer(1,game:GetService("Players").LocalPlayer)
-end
+local args = {
+    [1] = 1,2,
+    [2] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("Players").LocalPlayer.Character.FlameSword.Attack.RemoteEvent:FireServer(unpack(args))
 end)
 end
 end
@@ -149,15 +120,60 @@ FastAttackYoruV1 = b
 end)
 
 spawn(function()
-while wait() do
+while wait(0.5) do
 if FastAttackYoruV1 then
 pcall(function()
-while wait() do
-   game:GetService("Players").LocalPlayer.Backpack.DarkBlade.Attack.RemoteEvent:FireServer(1,game:GetService("Players").LocalPlayer)
-end
+local args = {
+    [1] = 1,2,
+    [2] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("Players").LocalPlayer.Character.DarkBlade.Attack.RemoteEvent:FireServer(unpack(args))
 end)
 end
 end
 end)
 
+Section:NewToggle("Fast Attack DiamondSword", " ", function(b)
+FastAttackDMSW = b
+end)
+
+spawn(function()
+while wait(0.5) do
+if FastAttackDMSW then
+pcall(function()
+local args = {
+    [1] = 1,2,
+    [2] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("Players").LocalPlayer.Character.DiamondSword.Attack.RemoteEvent:FireServer(unpack(args))
+end)
+end
+end
+end)
+
+
+
+
+
+
+Section:NewToggle("Fast Attack Venom ( Turn On Venom First )", " ", function(b)
+FastAttackVN = b
+end)
+
+spawn(function()
+while wait(0.5) do
+if FastAttackVN then
+pcall(function()
+local args = {
+    [1] = 1,2,
+    [2] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("Players").LocalPlayer.Character.Venom.Attack.RemoteEvent:FireServer(unpack(args))
+end)
+end
+end
+end)
 
