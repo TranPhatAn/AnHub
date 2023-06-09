@@ -3,7 +3,7 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
 local Window = Library.CreateLib("NoName Hub", "DarkTheme")
 local Tab = Window:NewTab("Main")
 local Section = Tab:NewSection("Auto Equip")
- 
+
 local Weaponlist = {}
 local Weapon = nil
 
@@ -79,7 +79,7 @@ FastAttackDarkSword = b
 end)
 
 spawn(function()
-while wait(0.5) do
+while wait(0.3) do
 if FastAttackDarkSword then
 pcall(function()
 local args = {
@@ -101,7 +101,7 @@ FastAttackFlameSword = b
 end)
 
 spawn(function()
-while wait(0.5) do
+while wait(0.3) do
 if FastAttackFlameSword then
 pcall(function()
 local args = {
@@ -120,7 +120,7 @@ FastAttackYoruV1 = b
 end)
 
 spawn(function()
-while wait(0.5) do
+while wait(0.3) do
 if FastAttackYoruV1 then
 pcall(function()
 local args = {
@@ -139,7 +139,7 @@ FastAttackDMSW = b
 end)
 
 spawn(function()
-while wait(0.5) do
+while wait(0.3) do
 if FastAttackDMSW then
 pcall(function()
 local args = {
@@ -163,7 +163,7 @@ FastAttackVN = b
 end)
 
 spawn(function()
-while wait(0.5) do
+while wait(0.3) do
 if FastAttackVN then
 pcall(function()
 local args = {
@@ -182,7 +182,7 @@ FastAttackSS = b
 end)
 
 spawn(function()
-while wait(0.5) do
+while wait(0.3) do
 if FastAttackDSS then
 pcall(function()
 local args = {
@@ -191,6 +191,35 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.SoulScythe.Attack.RemoteEvent:FireServer(unpack(args))
+end)
+end
+end
+end)
+
+
+Section:NewToggle("INF HEALTH ( Golden )", " ", function(b)
+INFH = b
+end)
+
+spawn(function()
+while wait(0.3) do
+if INFH then
+pcall(function()
+game:GetService("Players").LocalPlayer.Backpack.Golden.Transform.Fire:FireServer(game:GetService("Players").LocalPlayer)
+end)
+end
+end
+end)
+
+Section:NewToggle("OFF INF HEALTH ( Golden )", " ", function(b)
+OINFH = b
+end)
+
+spawn(function()
+while wait(0.5) do
+if OINFH then
+pcall(function()
+game:GetService("Players").LocalPlayer.Backpack.Golden.Transform.UnFire:FireServer(game:GetService("Players").LocalPlayer)
 end)
 end
 end
