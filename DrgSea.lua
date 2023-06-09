@@ -61,7 +61,7 @@ Section:NewToggle("Auto Farm Raid", " ", function(b)
 AutoFarmRaid = b
 end)
 
-spawn(function(0.1)
+spawn(function()
 while wait() do
 if AutoFarmRaid then
 pcall(function()
@@ -153,11 +153,6 @@ end
 end
 end)
 
-
-
-
-
-
 Section:NewToggle("Fast Attack Venom ( Turn On Venom First )", " ", function(b)
 FastAttackVN = b
 end)
@@ -229,7 +224,6 @@ end)
 end
 end
 end)
-
 
 Section:NewToggle("INF HEALTH ( Golden )", " ", function(b)
 INFH = b
