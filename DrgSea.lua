@@ -29,6 +29,50 @@ end
 end
 end)
 
+Section:NewToggle("Auto Farm Potara", " ", function(b)
+AFP = b
+end)
+
+spawn(function()
+while wait() do
+if AFP then
+pcall(function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(665.683899, 113.321594, 4432.22754, 0.828574121, -0.0357183181, 0.558738828, 0.0255235918, 0.99933517, 0.0260343123, -0.559297264, -0.00731033599, 0.828934968)
+end)
+end
+end
+end)
+
+Section:NewToggle("Auto Spawm Zama", " ", function(b)
+ASZ = b
+end)
+
+spawn(function()
+while wait() do
+if ASZ then
+pcall(function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3588.50684, 321.697662, 1208.70435, 0.965997219, 0, 0.258552492, 0, 1, 0, -0.258552492, 0, 0.965997219)
+end)
+end
+end
+end)
+
+
+Section:NewToggle("Auto Kill Zama", " ", function(b)
+AKZ = b
+end)
+
+spawn(function()
+while wait() do
+if AKZ then
+pcall(function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3327.31982, 88.2315521, 1435.46802, -4.37113883e-08, 1, 0, -1, -4.37113883e-08, 0, 0, 0, 1)
+end)
+end
+end
+end)
+
+
 Section:NewToggle("Auto Raid", " ", function(b)
 AutoRaid = b
 end)
