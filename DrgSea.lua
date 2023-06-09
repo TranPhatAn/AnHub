@@ -11,7 +11,7 @@ for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) 
     table.insert(Weaponlist,v.Name)
 end
  
-Section:NewDropdown("select weapon", " ", Weaponlist, function(currentOption)
+Section:NewDropdown("Select weapon", " ", Weaponlist, function(currentOption)
     Weapon = currentOption
 end)
  
@@ -61,7 +61,7 @@ Section:NewToggle("Auto Farm Raid", " ", function(b)
 AutoFarmRaid = b
 end)
 
-spawn(function()
+spawn(function(0.1)
 while wait() do
 if AutoFarmRaid then
 pcall(function()
@@ -79,7 +79,7 @@ FastAttackDarkSword = b
 end)
 
 spawn(function()
-while wait(0.3) do
+while wait(0.5) do
 if FastAttackDarkSword then
 pcall(function()
 local args = {
@@ -101,7 +101,7 @@ FastAttackFlameSword = b
 end)
 
 spawn(function()
-while wait(0.3) do
+while wait(0.5) do
 if FastAttackFlameSword then
 pcall(function()
 local args = {
@@ -120,7 +120,7 @@ FastAttackYoruV1 = b
 end)
 
 spawn(function()
-while wait(0.3) do
+while wait(0.5) do
 if FastAttackYoruV1 then
 pcall(function()
 local args = {
@@ -139,7 +139,7 @@ FastAttackDMSW = b
 end)
 
 spawn(function()
-while wait(0.3) do
+while wait(0.5) do
 if FastAttackDMSW then
 pcall(function()
 local args = {
@@ -163,7 +163,7 @@ FastAttackVN = b
 end)
 
 spawn(function()
-while wait(0.3) do
+while wait(0.5) do
 if FastAttackVN then
 pcall(function()
 local args = {
@@ -182,7 +182,7 @@ FastAttackDB2 = b
 end)
 
 spawn(function()
-while wait(0.3) do
+while wait(0.5) do
 if FastAttackDB2 then
 pcall(function()
 local args = {
@@ -197,7 +197,7 @@ end
 end)
 
 spawn(function()
-while wait(0.3) do
+while wait(0.5) do
 if FastAttackVN then
 pcall(function()
 local args = {
@@ -216,7 +216,7 @@ FastAttackSS = b
 end)
 
 spawn(function()
-while wait(0.3) do
+while wait(0.5) do
 if FastAttackDSS then
 pcall(function()
 local args = {
@@ -236,7 +236,7 @@ INFH = b
 end)
 
 spawn(function()
-while wait(0.3) do
+while wait(0.5) do
 if INFH then
 pcall(function()
 game:GetService("Players").LocalPlayer.Backpack.Golden.Transform.Fire:FireServer(game:GetService("Players").LocalPlayer)
