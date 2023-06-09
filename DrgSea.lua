@@ -283,6 +283,25 @@ end
 end
 end)
 
+Section:NewToggle("Fast Attack Buddha", " ", function(b)
+FastAttackBD = b
+end)
+
+spawn(function()
+while wait(0.5) do
+if FastAttackBD then
+pcall(function()
+local args = {
+    [1] = 1,2,
+    [2] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("Players").LocalPlayer.Character.Buddha.Attack.RemoteEvent:FireServer(unpack(args))
+end)
+end
+end
+end)
+
 Section:NewToggle("INF HEALTH ( Golden )", " ", function(b)
 INFH = b
 end)
@@ -310,4 +329,7 @@ end)
 end
 end
 end)
+
+
+
 
