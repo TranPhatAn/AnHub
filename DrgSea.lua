@@ -177,3 +177,22 @@ end
 end
 end)
 
+Section:NewToggle("Fast Attack Soul Scythe", " ", function(b)
+FastAttackSS = b
+end)
+
+spawn(function()
+while wait(0.5) do
+if FastAttackDSS then
+pcall(function()
+local args = {
+    [1] = 1,2,
+    [2] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("Players").LocalPlayer.Character.SoulScythe.Attack.RemoteEvent:FireServer(unpack(args))
+end)
+end
+end
+end)
+
