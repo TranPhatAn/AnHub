@@ -177,6 +177,40 @@ end
 end
 end)
 
+Section:NewToggle("Fast Attack DarkBladeV2", " ", function(b)
+FastAttackDB2 = b
+end)
+
+spawn(function()
+while wait(0.3) do
+if FastAttackDB2 then
+pcall(function()
+local args = {
+    [1] = 1,2,
+    [2] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("Players").LocalPlayer.Character.DarkBladeAwake.Attack.RemoteEvent:FireServer(unpack(args))
+end)
+end
+end
+end)
+
+spawn(function()
+while wait(0.3) do
+if FastAttackVN then
+pcall(function()
+local args = {
+    [1] = 1,2,
+    [2] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("Players").LocalPlayer.Character.Venom.Attack.RemoteEvent:FireServer(unpack(args))
+end)
+end
+end
+end)
+
 Section:NewToggle("Fast Attack Soul Scythe", " ", function(b)
 FastAttackSS = b
 end)
