@@ -1,6 +1,6 @@
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("NoName Hub", "DarkTheme")
+local Window = Library.CreateLib("An Hub", "DarkTheme")
 local Tab = Window:NewTab("Main")
 local Section = Tab:NewSection("Auto Equip")
 
@@ -297,6 +297,25 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Buddha.Attack.RemoteEvent:FireServer(unpack(args))
+end)
+end
+end
+end)
+
+Section:NewToggle("Fast Attack Wooden Sword", " ", function(b)
+FastAttackWS = b
+end)
+
+spawn(function()
+while wait(0.5) do
+if FastAttackWS then
+pcall(function()
+local args = {
+    [1] = 1,2,
+    [2] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("Players").LocalPlayer.Character.WoodenSword.Attack.RemoteEvent:FireServer(unpack(args))
 end)
 end
 end
