@@ -29,6 +29,20 @@ end
 end
 end)
 
+Section:NewToggle("Auto Farm Training Dummy", " ", function(b)
+AFTD = b
+end)
+
+spawn(function()
+while wait() do
+if AFTD then
+pcall(function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9941.75098, 9845.1709, 39.6598358, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+end)
+end
+end
+end)
+
 Section:NewToggle("Auto Farm Potara", " ", function(b)
 AFP = b
 end)
