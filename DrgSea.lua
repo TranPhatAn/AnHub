@@ -349,6 +349,20 @@ end
 end
 end)
 
+Section:NewToggle("Teleport To Gem ( j4f )", " ", function(b)
+TTGj4f = b
+end)
+
+spawn(function()
+while wait() do
+if TTj4f then
+pcall(function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(267.293091, 7758.35596, 768.837097, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+end)
+end
+end
+end)
+
 
 
 
