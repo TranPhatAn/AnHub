@@ -3,4 +3,4 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/TranPhatAn/AnHub/main
 end 
 if game.PlaceId == 13373351184 then 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/TranPhatAn/AnHub/main/raid.lua'))()
- end
+end
